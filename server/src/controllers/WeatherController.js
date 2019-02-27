@@ -16,7 +16,7 @@ module.exports = {
                         res.status(200).send(weather);
                     })
                     .catch(err => {
-                        res.status(404).send({ error: 'City not found!' });
+                        res.status(404).send({ error: `${city} not found!` });
                     })
             }
 

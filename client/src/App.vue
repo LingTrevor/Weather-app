@@ -1,8 +1,7 @@
 <template>
   <div>
-    <WeatherNav navTitle="Weather"/>
-    <Weather weatherLabel="Search Location"/>
-    <WeatherData/>
+    <weather-nav navTitle="Weather"/>
+    <weather weatherLabel="Search Location"/>
   </div>
 </template>
 
@@ -10,7 +9,6 @@
 import HelloWorld from "./components/HelloWorld.vue";
 import WeatherNav from "./components/WeatherNav.vue";
 import Weather from "./components/Weather.vue";
-import WeatherData from "./components/WeatherData.vue";
 
 export default {
   name: "app",
@@ -18,7 +16,6 @@ export default {
     HelloWorld,
     WeatherNav,
     Weather,
-    WeatherData
   }
 };
 </script>

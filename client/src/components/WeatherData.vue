@@ -10,39 +10,39 @@
       </div>
       <div class="column">
         <div class="info-card">
-          <div class="info-card-temp">-4°</div>
+          <div class="info-card-temp">{{temperature}}°</div>
         </div>
       </div>
       <div class="column">
         <div class="info-card">
-          <div class="location">Tallinn</div>
+          <div class="location">{{location}}</div>
         </div>
         <div class="info-card">
-          <div class="date">02.25.2019</div>
+          <div class="date">{{date}}</div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="column">
         <div class="info-card">
-          <p>Clear</p>
+          <p>{{main_weather}}</p>
         </div>
         <div class="info-card">
-          <p>Sunrise: 07:32 AM</p>
+          <p>Sunrise: {{sunrise}}</p>
         </div>
         <div class="info-card">
-          <p>Sunset: 05:28 PM</p>
+          <p>Sunset: {{sunset}}</p>
         </div>
       </div>
       <div class="column">
         <div class="info-card">
-          <p>Humidity: 68%</p>
+          <p>Humidity: {{humidity}}%</p>
         </div>
         <div class="info-card">
-          <p>Low: -5°</p>
+          <p>Low: {{low_temp}}°</p>
         </div>
         <div class="info-card">
-          <p>High: -2°</p>
+          <p>High: {{high_temp}}°</p>
         </div>
       </div>
     </div>
@@ -50,7 +50,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    location: String,
+    temperature: Number,
+    date: String,
+    humidity: Number,
+    low_temp: Number,
+    high_temp: Number,
+    sunrise: String,
+    sunset: String,
+    main_weather: String
+  }
+};
 </script>
 
 <style lang="scss">
@@ -106,7 +118,7 @@ export default {};
     margin-top: 40px;
   }
 
-  .date{
+  .date {
     color: rgba(5, 79, 125, 0.5);
   }
 
