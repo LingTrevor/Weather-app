@@ -1,6 +1,6 @@
 <template>
   <header class="weather-head">
-    <h1>{{navTitle}}</h1>
+    <h1>{{ navTitle }}</h1>
   </header>
 </template>
 
@@ -21,9 +21,9 @@ export default {
   justify-content: center;
   padding: 20px;
 
-  h1{
+  h1 {
     font-size: 48px;
-    color: #054F7D;
+    color: #054f7d;
   }
 }
 </style>

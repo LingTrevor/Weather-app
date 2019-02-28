@@ -1,7 +1,7 @@
-import Api from '@/services/Api'
+import Api from "@/services/Api";
 
 export default {
-    post(city) {
-        return Api().post('/weather', city);
-    }
-}
+  post(city) {
+    return Api().post("/weather", city);
+  }
+};

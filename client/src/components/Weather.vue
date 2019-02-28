@@ -2,23 +2,24 @@
   <main>
     <div class="search">
       <form @submit.prevent="getWeather">
-        <h3>{{weatherLabel}}</h3>
-        <div class="error" v-html="error"/>
-        <input type="text" v-model="city">
+        <h3>{{ weatherLabel }}</h3>
+        <div class="error" v-html="error" />
+        <input type="text" v-model="city" />
         <button>-></button>
       </form>
     </div>
     <WeatherData
-    v-if="this.weather"
-    :location="weather.name"
-    :temperature="weather.main.temp"
-    :date="weather.dt"
-    :humidity="weather.main.humidity"
-    :low_temp="weather.main.temp_min"
-    :high_temp="weather.main.temp_max"
-    :sunrise="weather.sys.sunrise"
-    :sunset="weather.sys.sunset"
-    :main_weather="weather.weather[0].main"/>
+      v-if="this.weather"
+      :location="weather.name"
+      :temperature="weather.main.temp"
+      :date="weather.dt"
+      :humidity="weather.main.humidity"
+      :low_temp="weather.main.temp_min"
+      :high_temp="weather.main.temp_max"
+      :sunrise="weather.sys.sunrise"
+      :sunset="weather.sys.sunset"
+      :main_weather="weather.weather[0].main"
+    />
   </main>
 </template>
 
@@ -79,6 +80,7 @@ export default {
     font-size: 36px;
     color: #054f7d;
     padding: 10px;
+    letter-spacing: 1px;
   }
 
   input {

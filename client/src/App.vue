@@ -1,21 +1,19 @@
 <template>
   <div>
-    <weather-nav navTitle="Weather"/>
-    <weather weatherLabel="Search Location"/>
+    <weather-nav navTitle="Weather" />
+    <weather weatherLabel="Search Location" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import WeatherNav from "./components/WeatherNav.vue";
 import Weather from "./components/Weather.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld,
     WeatherNav,
-    Weather,
+    Weather
   }
 };
 </script>

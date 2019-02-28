@@ -2,47 +2,43 @@
   <div class="card">
     <div class="row">
       <div class="column">
-        <img
-          src="https://qvcc.edu/wp-content/uploads/2017/03/Sun-PNG-Image.png"
-          alt="Weather Condition"
-          srcset
-        >
+        <img src="@/assets/conditions/01d.png" alt="Weather Condition" srcset />
       </div>
       <div class="column">
         <div class="info-card">
-          <div class="info-card-temp">{{temperature}}°</div>
+          <div class="info-card-temp">{{ temperature }}</div>
         </div>
       </div>
       <div class="column">
         <div class="info-card">
-          <div class="location">{{location}}</div>
+          <div class="location">{{ location }}</div>
         </div>
         <div class="info-card">
-          <div class="date">{{date}}</div>
+          <div class="date">{{ date }}</div>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="column">
         <div class="info-card">
-          <p>{{main_weather}}</p>
+          <p>{{ main_weather }}</p>
         </div>
         <div class="info-card">
-          <p>Sunrise: {{sunrise}}</p>
+          <p>{{ sunrise }}</p>
         </div>
         <div class="info-card">
-          <p>Sunset: {{sunset}}</p>
+          <p>{{ sunset }}</p>
         </div>
       </div>
       <div class="column">
         <div class="info-card">
-          <p>Humidity: {{humidity}}%</p>
+          <p>Humidity: {{ humidity }}%</p>
         </div>
         <div class="info-card">
-          <p>Low: {{low_temp}}°</p>
+          <p>Low: {{ low_temp }}</p>
         </div>
         <div class="info-card">
-          <p>High: {{high_temp}}°</p>
+          <p>High: {{ high_temp }}</p>
         </div>
       </div>
     </div>
@@ -53,11 +49,11 @@
 export default {
   props: {
     location: String,
-    temperature: Number,
+    temperature: String,
     date: String,
     humidity: Number,
-    low_temp: Number,
-    high_temp: Number,
+    low_temp: String,
+    high_temp: String,
     sunrise: String,
     sunset: String,
     main_weather: String
@@ -111,11 +107,14 @@ export default {
   // padding: 20px;
   p {
     margin-right: 40px;
+    padding: 5px;
   }
 
   .location {
     font-size: 36px;
     margin-top: 40px;
+    margin-right: 20px;
+    margin-left: 10px;
   }
 
   .date {
