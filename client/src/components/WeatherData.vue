@@ -2,7 +2,7 @@
   <div class="card">
     <div class="row">
       <div class="column">
-        <img src="@/assets/conditions/01d.png" alt="Weather Condition" srcset />
+        <img :src="image_link" alt="Weather Condition" srcset />
       </div>
       <div class="column">
         <div class="info-card">
@@ -35,10 +35,12 @@
           <p>Humidity: {{ humidity }}%</p>
         </div>
         <div class="info-card">
-          <p>Low: {{ low_temp }}</p>
+          <p v-if="low_temp">Low: {{ low_temp }}</p>
+          <p v-else>Low: -</p>
         </div>
         <div class="info-card">
-          <p>High: {{ high_temp }}</p>
+          <p v-if="high_temp">High: {{ high_temp }}</p>
+          <p v-else>High: -</p>
         </div>
       </div>
     </div>
@@ -56,7 +58,8 @@ export default {
     high_temp: String,
     sunrise: String,
     sunset: String,
-    main_weather: String
+    main_weather: String,
+    image_link: String
   }
 };
 </script>
@@ -66,8 +69,8 @@ export default {
   display: flex;
   flex-wrap: wrap;
   background-color: #e9f6fe;
-  border: 2px solid #054f7d;
-  box-shadow: 1px 2px 5px #054f7d;
+  border: 1px solid #054f7d;
+  box-shadow: 1px 2px 20px #054f7d;
   height: 320px;
   max-width: 550px;
   margin: 0 auto;
@@ -88,7 +91,7 @@ export default {
         height: 180px;
         width: 180px;
         margin-left: 25px;
-        margin-top: 15px;
+        margin-top: 5px;
       }
       span {
         font-size: 80px;

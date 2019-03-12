@@ -19,6 +19,7 @@
       :sunrise="weather.sys.sunrise"
       :sunset="weather.sys.sunset"
       :main_weather="weather.weather[0].main"
+      :image_link="weather.weather[0].icon"
     />
   </main>
 </template>
@@ -97,7 +98,7 @@ export default {
 
     &:focus {
       outline: none;
-      box-shadow: 1px 2px 5px #054f7d;
+      box-shadow: 1px 2px 20px #054f7d;
     }
   }
 
@@ -112,7 +113,7 @@ export default {
     font-weight: bold;
     &:focus {
       outline: none;
-      box-shadow: 1px 2px 5px #054f7d;
+      box-shadow: 1px 2px 20px #054f7d;
     }
   }
 
