@@ -3,8 +3,8 @@
     <div class="search">
       <form @submit.prevent="getWeather">
         <h3>{{ weatherLabel }}</h3>
-        <div class="error" v-html="error" />
-        <input type="text" v-model="city" />
+        <div class="error" v-html="error"/>
+        <input type="text" v-model="city">
         <button>-></button>
       </form>
     </div>
@@ -82,6 +82,18 @@ export default {
     color: #054f7d;
     padding: 10px;
     letter-spacing: 1px;
+
+    @media screen and(max-width: 768px) {
+      font-size: 30px;
+    }
+
+    @media screen and(max-width: 576px) {
+      font-size: 24px;
+    }
+
+    @media screen and(max-width: 320px) {
+      font-size: 18px;
+    }
   }
 
   input {
@@ -95,6 +107,16 @@ export default {
     font-size: 16px;
     letter-spacing: 2px;
     text-transform: uppercase;
+
+    @media screen and(max-width: 576px) {
+      min-width: 250px;
+      font-size: 14px;
+    }
+
+    @media screen and(max-width: 320px) {
+      min-width: 220px;
+      font-size: 14px;
+    }
 
     &:focus {
       outline: none;
@@ -114,6 +136,9 @@ export default {
     &:focus {
       outline: none;
       box-shadow: 1px 2px 20px #054f7d;
+    }
+    @media screen and(max-width: 576px) {
+      padding-top: 6px;
     }
   }
 
