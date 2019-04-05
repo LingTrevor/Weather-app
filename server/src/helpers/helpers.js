@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 module.exports = {
     newWeatherObj(data) {
         //Take weather data from data
@@ -62,20 +64,22 @@ getTime = (date) => {
 };
 
 addConditionImgLink = (icon) => {
+    let imgData = fs.readFileSync(`server/src/images/${icon}.png`);
+    let base64ImgData = `data:image/png;base64,${imgData.toString('base64')}`;
+
     const conditionImages = {
-        "clear": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-clear-icon.png",
-        "moon": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-clear-night-icon.png",
-        "fewClouds": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-clouds-icon.png",
-        "clouds": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-many-clouds-icon.png",
-        "brokenClouds": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-clouds-night-icon.png",
-        "snow": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-snow-icon.png",
-        "snowNight": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-snow-scattered-night-icon.png",
-        "rain": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-showers-day-icon.png",
-        "showerRain": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-showers-icon.png",
-        "nightRain": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-showers-night-icon.png",
-        "thunder": "http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Status-weather-storm-icon.png",
-        "foggy": "http://icons.iconarchive.com/icons/icons-land/weather/256/Fog-icon.png",
-        "greatDay": "http://www.clipartroo.com/images/53/this-is-the-day-clipart-53081.png"
+        "clear": base64ImgData,
+        "moon": base64ImgData,
+        "fewClouds": base64ImgData,
+        "brokenClouds": base64ImgData,
+        "clouds": base64ImgData,
+        "snow": base64ImgData,
+        "snowNight": base64ImgData,
+        "rain": base64ImgData,
+        "showerRain": base64ImgData,
+        "nightRain": base64ImgData,
+        "thunder": base64ImgData,
+        "foggy": base64ImgData
     }
 
     if (icon === "01d") {
@@ -149,8 +153,5 @@ addConditionImgLink = (icon) => {
     else if (icon === "50n") {
         icon = conditionImages.foggy;
         return icon;
-    } else {
-        icon = conditionImages.greatDay;
-        return icon;
     }
-}
+};
